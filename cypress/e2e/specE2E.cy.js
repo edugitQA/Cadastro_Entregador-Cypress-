@@ -12,9 +12,7 @@ describe('test E2E Realizando compra de produto com sucesso', function() {
     cy.filMandatoryFields()
 
     //Validação dos campos preenchidos automaticamente
-    cy.get('input[name=address]').should('be.visible').and('have.value', 'Quadra 19 Conjunto A');
-    cy.get('input[name=district]').should('be.visible').and('have.value', 'Setor Residencial Leste (Planaltina)');
-    cy.get('input[name=city-uf]').should('be.visible').and('have.value', 'Brasília/DF');
+    cy.validationofmandatoryfields()
 
     //Seleciona documento, valida se documento está sendo realmente selecionado
     cy.get('input[type="file"]').invoke('attr', 'style', 'display: block').selectFile('./cypress/fixtures/Mr_bean.png')

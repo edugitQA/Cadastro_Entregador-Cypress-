@@ -9,3 +9,8 @@ Cypress.Commands.add('filMandatoryFields', function(){
     cy.get('input[name=address-details]').type('apt 01');
 })
 
+Cypress.Commands.add('validationofmandatoryfields', function(){
+    cy.get('input[name=address]').should('be.visible').and('have.value', 'Quadra 19 Conjunto A');
+    cy.get('input[name=district]').should('be.visible').and('have.value', 'Setor Residencial Leste (Planaltina)');
+    cy.get('input[name=city-uf]').should('be.visible').and('have.value', 'Brasília/DF');
+})
