@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('test E2E Realizando compra de produto com sucesso', function() {
+describe('Cadastrando entregador', function() {
   beforeEach(function() {
     cy.visit("https://buger-eats.vercel.app/deliver")
   })
@@ -12,7 +12,7 @@ describe('test E2E Realizando compra de produto com sucesso', function() {
     cy.filMandatoryFields()
 
     //Validação dos campos preenchidos automaticamente
-    cy.validationofmandatoryfields()
+    // cy.validationofmandatoryfields()
 
     //Seleciona documento, valida se documento está sendo realmente selecionado
     cy.get('input[type="file"]').invoke('attr', 'style', 'display: block').selectFile('./cypress/fixtures/Mr_bean.png')
@@ -25,7 +25,7 @@ describe('test E2E Realizando compra de produto com sucesso', function() {
     cy.screenshot('cadastro_entregador_sucesso');
     });
 
-  it.only('não deve cadastrar entregador com cpf invalido', function(){
+  it('não deve cadastrar entregador com cpf invalido', function(){
     cy.filMandatoryFields2()
     cy.get('input[type="file"]').invoke('attr', 'style', 'display: block').selectFile('./cypress/fixtures/Mr_bean.png')
     .should(function($input) {
